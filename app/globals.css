@@ -25,3 +25,66 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
+/* fix letter spacing on share images */
+* {
+  text-rendering: geometricprecision !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 取消移动端点击背景高亮效果 */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* make sure some text is not selectable */
+button {
+  user-select: none;
+}
+
+/* default overrides -- BEGIN */
+/* Removing input background colour for Chrome autocomplete */
+/* ref: https://stackoverflow.com/a/69364368/2710165 */
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-webkit-autofill:hover {
+  transition: background-color 600000s 0s, color 600000s 0s !important;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}
+/* default overrides -- END */
+
+/* scroll bars style -- BEGIN */
+body,
+.dark-scrollbar .cm-scroller {
+  /* Foreground, Background */
+  scrollbar-color: #204ac5 #204ac5;
+  background: #121825;
+}
+
+body::-webkit-scrollbar,
+.dark-scrollbar .cm-scroller::-webkit-scrollbar {
+  width: 6px; /* Mostly for vertical scrollbars */
+  height: 6px; /* Mostly for horizontal scrollbars */
+}
+body::-webkit-scrollbar-thumb,
+.dark-scrollbar .cm-scroller::-webkit-scrollbar-thumb {
+  /* Foreground */
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  cursor: pointer;
+}
+body::-webkit-scrollbar-track,
+.dark-scrollbar .cm-scroller::-webkit-scrollbar-track {
+  /* Background */
+  background: #121825;
+  border-radius: 2px;
+}
+/* scroll bars style -- END */
